@@ -25,8 +25,12 @@ class Ball {
         this.body.appendChild(this.ball)
         this.ball.classList.add('ball')
 
+        this.ball.style.width = this.size
+        this.ball.style.height = this.size
+
         this.bodyWidth = this.body.clientWidth
         this.bodyHeight = this.body.clientHeight
+
         this.ballHeight = this.ball.clientHeight
         this.ballWidth = this.ball.clientWidth
 
@@ -42,8 +46,7 @@ class Ball {
         })
 
         this.ball.style.backgroundColor = this.color
-        this.ball.style.width = this.size
-        this.ball.style.height = this.size
+
         this.id = this.moveTheBall()
     }
 
@@ -54,7 +57,7 @@ class Ball {
             this.bodyWidth = this.body.clientWidth
             this.bodyHeight = this.body.clientHeight
 
-            this.ball.style.left = this.x + 'px';
+            this.ball.style.left = this.x + 'px'
             this.ball.style.top = this.y + 'px'
 
 
@@ -94,7 +97,7 @@ class Ball {
 const myBalls = []
 
 function generateRandomNumber(maxLimit) {
-    return Math.floor(Math.random() * maxLimit) + 70
+    return Math.floor(Math.random() * maxLimit)
 }
 
 function generateRandomSpeedUpTo(maxLimit) {
@@ -102,14 +105,14 @@ function generateRandomSpeedUpTo(maxLimit) {
 }
 
 function randomRGB() {
-    let r = generateRandomNumber(256)
-    let g = generateRandomNumber(256)
-    let b = generateRandomNumber(256)
+    let r = generateRandomNumber(256) + 70
+    let g = generateRandomNumber(256) + 70
+    let b = generateRandomNumber(256) + 70
 
     return `rgb(${r},${g},${b})`
 }
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 10; i++) {
     myBalls.push(new Ball(i * generateRandomNumber(200), i * generateRandomNumber(200), randomRGB(), generateRandomNumber(100), generateRandomSpeedUpTo(3)))
 }
 
