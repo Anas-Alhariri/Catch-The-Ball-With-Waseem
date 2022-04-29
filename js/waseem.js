@@ -65,7 +65,6 @@ console.log("BH:" + bodyHeight)
 
 
 
-id = startTheGame();
 
 
 function startTheGame() {
@@ -96,6 +95,7 @@ function startTheGame() {
         if (x <= 0 && !GR) {
             GR = true
         }
+
         // from top to bottom
         if (GD) {
             y++;
@@ -113,3 +113,8 @@ function startTheGame() {
 
     }, 1)
 }
+
+
+
+
+id = startTheGame();

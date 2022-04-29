@@ -88,6 +88,7 @@ class Ball {
             if (this.y <= 0 && !this.GD) {
                 this.GD = true
             }
+
         }, 1)
     }
 }
@@ -112,8 +113,17 @@ function randomRGB() {
     return `rgb(${r},${g},${b})`
 }
 
+
 for (let i = 0; i < 10; i++) {
-    myBalls.push(new Ball(i * generateRandomNumber(200), i * generateRandomNumber(200), randomRGB(), generateRandomNumber(100), generateRandomSpeedUpTo(3)))
+    myBalls.push(
+        new Ball(
+            i * generateRandomNumber(200),
+            i * generateRandomNumber(200),
+            randomRGB(),
+            generateRandomNumber(100),
+            generateRandomSpeedUpTo(3)
+        )
+    )
 }
 
 // const ball1 = new Ball(500, 500, "red", 10, 20)
@@ -121,3 +131,39 @@ for (let i = 0; i < 10; i++) {
 // const ball3 = new Ball(50, 900, "purple", 10, 20)
 // const ball4 = new Ball(580, 500, "lightgreen", 10, 20)
 // const ball5 = new Ball(180, 500, "hotpink", 10, 20)
+
+
+// let userInput = prompt("Please, Max, type something: ")
+// if (userInput) {
+//     alert(userInput)
+// }
+
+
+// Falsy values:
+//! undefined , null , NaN , 0 , "" (empty string)
+function getUserInput(username = "User") {
+    let userInput = prompt(`Please, ${username}, type something: `)
+    if (userInput) {
+        return userInput
+    } else {
+        return null
+    }
+}
+
+//* Program Start:
+// let username = getUserInput("Max")
+
+// while (!username) {
+//     username = getUserInput("Max")
+// }
+
+// const h1 = document.createElement('h1')
+// const body = document.body
+
+// h1.innerHTML = username
+
+// body.appendChild(h1)
+
+
+//! Create a function that will accept 4 parameters, (Tagname, Text, ClassName, BackgroundColor)
+//! Then this function will return the new create HTML element that will make use of the passed values.
